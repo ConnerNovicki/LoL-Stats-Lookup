@@ -1,0 +1,9 @@
+.validated-input-wrapper {
+  border: 1px;
+  background-color: rgb(91, 255, 107);
+  width: 70%;
+  align-items: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(0, 0, 0);
+}

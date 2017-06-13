@@ -1,0 +1,25 @@
+<div class="outer-container">
+  <div class="container col-md-8 col-md-offset-2" align="center">
+
+    <h1>{{summonerName}}</h1>
+    <h2>{{championName}}: {{championTitle}}</h2>
+
+    <h3>Current Mastery Score: {{masteryScore}}</h3>
+    <div class="stats-data">
+      <p>
+        Games played: {{gamesPlayed}}
+      </p>
+      <p>
+        Champion Level: {{championLevel}}
+      </p>
+      <p>
+        Chest Earned: {{chestEarned ? 'Yes' : 'No'}}
+      </p>
+      <p>
+        Tokens Earned: {{tokensEarned}}
+      </p>
+  </div>
+
+
+  <a class="btn btn-primary" routerLink="/input-form">Back</a>
+</div>

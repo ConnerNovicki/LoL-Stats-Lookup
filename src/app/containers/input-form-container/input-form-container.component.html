@@ -1,0 +1,88 @@
+<div class="outer-container">
+<div class="container col-md-8 col-md-offset-2 main-container">
+  <div class="row">
+    <h1>League of Legends Stats Lookup</h1>
+  </div>
+
+  <div class="row padding-top-large">
+    <div *ngIf="!isValidSummoner;else summonerValidated">
+      <div *ngIf="!isValidatingSummoner;else summonerValidating">
+        <label>Summoner</label>
+        <app-input-field
+          [text]="summonerInput"
+          [placeholder]="'Summoner'"
+          (_onInput)="onSummonerInput($event)"
+        >
+        </app-input-field>
+
+        <div class="row error-message">
+          <p>{{getSummonerErrorMessage()}}</p>
+        </div>
+
+      </div>
+
+    <ng-template #summonerValidating>
+      Checking...
+    </ng-template>
+    </div>
+
+    <ng-template #summonerValidated>
+      <app-validated-input
+        [text]="realSummonerName"
+        (_onClick)="makeSummonerInputEditable()"
+      >
+      </app-validated-input>
+    </ng-template>
+  </div>
+
+
+
+  <div class="row padding-top-small">
+    <div *ngIf="!isValidChampion;else championValidated">
+      <div *ngIf="!isValidatingChampion;else championValidating">
+        <label>Champion</label>
+        <app-input-field
+          [text]="championInput"
+          [placeholder]="'Champion'"
+          (_onInput)="onChampionInput($event)"
+        >
+        </app-input-field>
+
+        <div class="row error-message">
+          <p>{{getChampionErrorMessage()}}</p>
+        </div>
+      </div>
+
+      <ng-template #championValidating>
+        Checking...
+      </ng-template>
+    </div>
+
+    <ng-template #championValidated>
+      <app-validated-input
+        [text]="realChampionName"
+        (_onClick)="makeChampionInputEditable()"
+      >
+      </app-validated-input>
+    </ng-template>
+  </div>
+
+
+
+  <div class="row padding-top-small">
+    <button
+      type="button"
+      (click)="validate()"
+      class="btn btn-primary">
+      Validate
+    </button>
+    <a routerLink="/stats-display">
+      <button
+      [disabled]="!(isValidSummoner && isValidChampion)"
+      class="btn btn-success">
+        Next
+      </button>
+    </a>
+  </div>
+</div>
+</div>
