@@ -2,7 +2,7 @@ import { Action, ActionReducer } from '@ngrx/store';
 import { INPUT_FORM_ACTIONS } from 'app/actions/input-form.actions';
 import { INITIAL_STATE, State } from 'app/state/input-form.state';
 
-export const InputFormReducer: ActionReducer<State> = (state = INITIAL_STATE, action: Action) => {
+export function InputFormReducer(state = INITIAL_STATE, action: Action) {
   const { type, payload } = action;
 
   switch ( type ) {

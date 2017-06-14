@@ -3,7 +3,7 @@ import { INPUT_FORM_ACTIONS } from 'app/actions/input-form.actions';
 import { FETCHED_DATA_ACTIONS } from 'app/actions/fetched-data.actions';
 import { INITIAL_STATE, State } from 'app/state/fetched-data.state';
 
-export const FetchedDataReducer: ActionReducer<State> = (state = INITIAL_STATE, action: Action) => {
+export function FetchedDataReducer(state = INITIAL_STATE, action: Action) {
   const { type, payload } = action;
 
   switch ( type ) {
