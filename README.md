@@ -16,5 +16,9 @@ npm install
 ng serve
 ```
 
+**NOTE**
+The api request may be denied by the browser, so you will need to download CORS from the chrome store.
+After downloading, delete the provided path and replace it with: "*://na1.api.riotgames.com/lol/*"
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.0.
